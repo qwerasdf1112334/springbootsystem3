@@ -1,2 +1,2 @@
-2023-10-12 14:22:05.257 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - ==> Parameters: 0(Integer), 10(Integer)
-2023-10-12 14:22:05.262 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - <==      Total: 10
+2023-10-12 17:09:11.537 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - ==> Parameters: 屌丝(String), 0(Integer), 10(Integer)
+2023-10-12 17:09:11.540 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - <==      Total: 8

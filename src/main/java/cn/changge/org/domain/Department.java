@@ -25,9 +25,9 @@ public class Department extends BaseDomain {
     private String name;
     private String intro;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = ("GMT+8"))
-    private Date createTime =new Date();
+    private Date createTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = ("GMT+8"))
-    private Date updateTime=new Date();
+    private Date updateTime;
     private Employee manager;
     private Department parent;
     private String path;
