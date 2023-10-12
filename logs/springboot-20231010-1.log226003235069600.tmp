@@ -1,0 +1,8 @@
+2023-10-10 09:11:58.413 ----> [main] ---> INFO  cn.changge.org.mapper.DepTest - Started DepTest in 4.492 seconds (JVM running for 5.902)
+2023-10-10 09:11:58.721 ----> [main] ---> INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-10-10 09:11:59.047 ----> [main] ---> INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-10-10 09:11:59.055 ----> [main] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.findAll - ==>  Preparing: select * from t_org_department d left join t_org_employee e on d.manager_id=e.department_id 
+2023-10-10 09:11:59.084 ----> [main] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.findAll - ==> Parameters: 
+2023-10-10 09:11:59.136 ----> [main] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.findAll - <==      Total: 190
+2023-10-10 09:11:59.157 ----> [SpringContextShutdownHook] ---> INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-10-10 09:11:59.163 ----> [SpringContextShutdownHook] ---> INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...

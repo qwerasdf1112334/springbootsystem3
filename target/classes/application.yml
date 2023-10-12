@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql:///system
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: cn.changge.org.domain,
+                        cn.changge.auth.domain
