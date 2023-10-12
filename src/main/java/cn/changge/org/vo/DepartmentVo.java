@@ -1,5 +1,6 @@
 package cn.changge.org.vo;
 
+import cn.changge.base.query.BaseQuery;
 import lombok.Data;
 
 /**
@@ -12,12 +13,6 @@ import lombok.Data;
  */
 @Data
 
-public class DepartmentVo {
-    private String keyword;
-    private Integer currentPage;
-    private Integer pageSize;
+public class DepartmentVo extends BaseQuery {
 
-    public Integer getStart(){
-        return (this.currentPage-1)*pageSize;
-    }
 }

@@ -23,11 +23,11 @@ public class DepTest {
     private DepartmentMapper departmentMapper;
     @Test
     public void test1(){
-        departmentMapper.findAll().forEach(System.out::println);
+        departmentMapper.queryAll().forEach(System.out::println);
     }
     @Test
     public void test2(){
-        Department department = departmentMapper.findById(7);
+        Department department = departmentMapper.queryById(7);
 
     }
 

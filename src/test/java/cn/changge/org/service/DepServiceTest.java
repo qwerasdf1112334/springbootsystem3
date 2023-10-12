@@ -25,7 +25,7 @@ public class DepServiceTest {
     private IDempartmentService service;
     @Test
     public void test1(){
-        service.findAll().forEach(System.out::println);
+        service.queryAll().forEach(System.out::println);
     }
     @Test
     public void test2(){
@@ -37,7 +37,7 @@ public class DepServiceTest {
         DepartmentVo query = new DepartmentVo();
         query.setCurrentPage(1);
         query.setPageSize(2);
-        PageInfo<Department> pageList = service.pageList(query);
+        PageInfo<Department> pageList = service.queryPage(query);
         System.out.println("总条数:"+pageList.getTotal());
         System.out.println("当前页数据:");
         pageList.getData().forEach(System.out::println);
@@ -46,7 +46,7 @@ public class DepServiceTest {
     private   IEmployeeService employeeService;
     @Test
     public void empFindAll(){
-        employeeService.findAll().forEach(System.out::println);
+        employeeService.queryAll().forEach(System.out::println);
     }
 
 

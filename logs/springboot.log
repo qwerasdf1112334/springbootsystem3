@@ -1,1 +1,2 @@
-2023-10-11 19:41:58.145 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.findAll - <==      Total: 21
+2023-10-12 14:22:05.257 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - ==> Parameters: 0(Integer), 10(Integer)
+2023-10-12 14:22:05.262 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - <==      Total: 10

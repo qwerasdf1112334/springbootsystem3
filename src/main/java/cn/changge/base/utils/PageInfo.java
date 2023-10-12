@@ -22,5 +22,5 @@ public class PageInfo<T> {
     //总条数
     private Long total=0l;
     //当前页数据
-    private List<T> data=new ArrayList<>();
+    private List<T> data=new ArrayList<T>();
 }

@@ -76,7 +76,7 @@ public class DepartmentController {
     @GetMapping("/{id}")
     public AjaxResult findById(@PathVariable("id") Long id){
         try {
-            return AjaxResult.success(service.findById(id));
+            return AjaxResult.success(service.queryById(id));
         } catch (Exception e) {
             e.printStackTrace();
             return AjaxResult.error();
@@ -92,7 +92,7 @@ public class DepartmentController {
     @GetMapping
     public AjaxResult findAll(){
         try {
-            return AjaxResult.success(service.findAll());
+            return AjaxResult.success(service.queryAll());
         } catch (Exception e) {
             e.printStackTrace();
             return AjaxResult.error();
@@ -108,7 +108,7 @@ public class DepartmentController {
     @PostMapping
     public AjaxResult pageList(@RequestBody DepartmentVo departmentVo){
         try {
-            PageInfo<Department> pageInfo =service.pageList(departmentVo);
+            PageInfo<Department> pageInfo =service.queryPage(departmentVo);
             pageInfo.getData().forEach(System.out::println);
             return AjaxResult.success(pageInfo);
         } catch (Exception e) {

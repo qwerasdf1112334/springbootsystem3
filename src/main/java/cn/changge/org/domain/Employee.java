@@ -1,5 +1,6 @@
 package cn.changge.org.domain;
 
+import cn.changge.base.domain.BaseDomain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Employee {
-    private Long id;
+public class Employee extends BaseDomain {
+
     private String username;
     private String password;
     private String email;

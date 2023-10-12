@@ -25,7 +25,7 @@ public class EmployeeController {
     @GetMapping
     public AjaxResult findAll(){
         try {
-            return AjaxResult.success(service.findAll());
+            return AjaxResult.success(service.queryAll());
         } catch (Exception e) {
             e.printStackTrace();
             return AjaxResult.error();

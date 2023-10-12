@@ -1,5 +1,6 @@
 package cn.changge.org.service.impl;
 
+import cn.changge.base.service.impl.BaseServiceImpl;
 import cn.changge.org.domain.Employee;
 import cn.changge.org.mapper.EmployeeMapper;
 import cn.changge.org.service.IEmployeeService;
@@ -17,11 +18,11 @@ import java.util.List;
  * @Version: 1.0
  */
 @Service
-public class EmployeeServiceImpl implements IEmployeeService {
+public class EmployeeServiceImpl extends BaseServiceImpl<Employee> implements IEmployeeService {
     @Autowired
     private EmployeeMapper employeeMapper;
     @Override
-    public List<Employee> findAll() {
-        return employeeMapper.findAll();
+    public List<Employee> queryAll() {
+        return employeeMapper.queryAll();
     }
 }

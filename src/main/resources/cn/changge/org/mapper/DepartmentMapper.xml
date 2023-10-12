@@ -67,12 +67,12 @@
             #{id}
         </foreach>
     </delete>
-    <select id="findById" resultMap="depMap">
+    <select id="queryById" resultMap="depMap">
         select * from t_org_department
         where id=#{id}
     </select>
 
-    <select id="findAll" resultMap="depMap">
+    <select id="queryAll" resultMap="depMap">
         select d.* ,
                 e.id as eid,
                 e.username as ename,
@@ -82,13 +82,13 @@
         left join t_org_employee e on  e.id = d.manager_id
         left join t_org_department p on p.id=d.parent_id
     </select>
-    <select id="querryTotal" resultType="java.lang.Long">
+    <select id="queryTotal" resultType="java.lang.Long">
         select count(*) from   t_org_department d
         left join t_org_employee e on  e.id = d.manager_id
         left join t_org_department p on p.id=d.parent_id
         <include refid="pagelist"></include>
     </select>
-    <select id="querryData" resultMap="depMap">
+    <select id="queryPage" resultMap="depMap">
         select d.* ,
                 e.id as eid,
                 e.username as ename,

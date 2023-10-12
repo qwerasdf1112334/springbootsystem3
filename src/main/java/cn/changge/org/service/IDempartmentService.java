@@ -1,10 +1,8 @@
 package cn.changge.org.service;
 
-import cn.changge.base.utils.PageInfo;
+import cn.changge.base.service.BaseService;
 import cn.changge.org.domain.Department;
-import cn.changge.org.vo.DepartmentVo;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,16 +13,8 @@ import java.util.List;
  * @Description: TODO
  * @Version: 1.0
  */
-public interface IDempartmentService {
-    void insert(Department department);
-    void delete(Serializable id);
-    void update(Department department);
-    Department findById(Serializable id);
-    List<Department> findAll();
+public interface IDempartmentService extends BaseService<Department> {
 
-    PageInfo<Department> pageList(DepartmentVo departmentVo);
-
-    void batchDelete(List<Long> ids);
 
     List<Department> getDeptTree();
 }

@@ -1,9 +1,7 @@
 package cn.changge.org.mapper;
 
-import cn.changge.org.domain.Employee;
+import cn.changge.base.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
 
 /**
  * @BelongsProject: springboot-system
@@ -14,6 +12,6 @@ import java.util.List;
  * @Version: 1.0
  */
 @Mapper
-public interface EmployeeMapper {
-    List<Employee> findAll();
+public interface EmployeeMapper extends BaseMapper {
+
 }

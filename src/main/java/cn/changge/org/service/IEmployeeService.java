@@ -1,8 +1,7 @@
 package cn.changge.org.service;
 
+import cn.changge.base.service.BaseService;
 import cn.changge.org.domain.Employee;
-
-import java.util.List;
 
 /**
  * @BelongsProject: springboot-system
@@ -12,8 +11,8 @@ import java.util.List;
  * @Description: TODO
  * @Version: 1.0
  */
-public interface IEmployeeService {
+public interface IEmployeeService extends BaseService<Employee> {
 
 
-    List<Employee> findAll();
+
 }
