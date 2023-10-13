@@ -8,4 +8,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 mybatis:
   type-aliases-package: cn.changge.org.domain,
-                        cn.changge.auth.domain
+                        cn.changge.org.query,
+                        cn.changge.auth.domain,
+                        cn.changge.test.domain,
+                        cn.changge.test.query

@@ -1,2 +1,6 @@
-2023-10-12 17:09:11.537 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - ==> Parameters: 屌丝(String), 0(Integer), 10(Integer)
-2023-10-12 17:09:11.540 ----> [http-nio-8080-exec-7] ---> DEBUG cn.changge.org.mapper.DepartmentMapper.queryPage - <==      Total: 8
+2023-10-13 16:42:22.072 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryTotal - ==>  Preparing: select count(*) from t_org_employee 
+2023-10-13 16:42:22.074 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryTotal - ==> Parameters: 
+2023-10-13 16:42:22.075 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryTotal - <==      Total: 1
+2023-10-13 16:42:22.076 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - ==>  Preparing: select * from t_org_employee limit ?,? 
+2023-10-13 16:42:22.076 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - ==> Parameters: 20(Integer), 10(Integer)
+2023-10-13 16:42:22.078 ----> [http-nio-8080-exec-9] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - <==      Total: 3
