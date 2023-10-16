@@ -1,6 +1,7 @@
 package cn.changge.org.service;
 
 import cn.changge.APP;
+import cn.changge.auth.service.IPermissionScanService;
 import cn.changge.base.utils.PageInfo;
 import cn.changge.org.domain.Department;
 import cn.changge.org.vo.DepartmentVo;
@@ -48,7 +49,15 @@ public class DepServiceTest {
     public void empFindAll(){
         employeeService.queryAll().forEach(System.out::println);
     }
-
+    @Autowired
+    private IPermissionScanService scanService;
+    @Test
+    public void test5(){
+        System.out.println("---------------");
+        scanService.scan();
+        System.out.println("++++++++++++++");
+    }
 
     }
+
 

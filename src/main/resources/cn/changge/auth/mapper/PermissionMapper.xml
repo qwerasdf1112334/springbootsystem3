@@ -44,14 +44,16 @@
     </select>
     <!--//查询总数=参数（查询对象），返回值：long-->
     <select id="queryTotal" parameterType="PermissionQuery" resultType="long">
-        select count(*) from t_auth_permission
+        select count(*) from t_auth_permission p
+        left JOIN t_auth_permission e
+        on p.parent_id = e.id
         <include refid="whereSql"/>
     </select>
     <!--//查询当前页数据=参数（查询对象），返回值:List-->
     <select id="queryPage" parameterType="PermissionQuery" resultMap="BaseResultMap">
-        select p.*,e.id,e.name from t_auth_permission p
+        select p.*,e.id eid,e.name ename from t_auth_permission p
         left join t_auth_permission e
-        on p.id=e.partent_id
+        on p.parent_id=e.id
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
@@ -60,7 +62,7 @@
     <sql id="whereSql">
         <where>
             <if test="keyword!=null and keyword!=''">
-                and (p.name like concat('%',#{keyword},'%'))
+                and (p.`name` like concat('%',#{keyword},'%'))
             </if>
         </where>
     </sql>
@@ -83,8 +85,8 @@
         <result column="descs" property="descs" />
         <result column="sn" property="sn" />
         <association property="parent" javaType="permission">
-            <id column="did" property="id"></id>
-            <result column="pname" property="name"></result>
+            <id column="eid" property="id"></id>
+            <result column="ename" property="name"></result>
         </association>
     </resultMap>
 

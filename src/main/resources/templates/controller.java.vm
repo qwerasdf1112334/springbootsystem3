@@ -89,7 +89,7 @@ public class ${entity}Controller {
     * @return PageList 分页对象
     */
     @PostMapping
-    public AjaxResult json(@RequestBody ${entity}Query query)
+    public AjaxResult pageList(@RequestBody ${entity}Query query)
     {
         try {
             PageInfo<${entity}> pageList = ${table.entityPath}Service.queryPage(query);
@@ -104,7 +104,7 @@ public class ${entity}Controller {
    * 批量删除
    */
     @PatchMapping
-    public AjaxResult json(@RequestBody List<Long> ids)
+    public AjaxResult batchDelete(@RequestBody List<Long> ids)
     {
         try {
                 ${table.entityPath}Service.batchDelete(ids);

@@ -20,10 +20,13 @@ import javax.servlet.annotation.WebListener;
 public class PermissionListener implements ServletContextListener {
     @Autowired
     private IPermissionScanService Service;
+    @Autowired
+    private IPermissionService permissionService;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("开始初始化");
+        permissionService.deleteAll();
         Service.scan();
         System.out.println("初始化完成");
     }

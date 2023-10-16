@@ -96,7 +96,7 @@ public class OrgEmployeeController {
     */
     @PostMapping
     @ChangGePermission(name = "员工分页查询")
-    public AjaxResult json(@RequestBody OrgEmployeeQuery query)
+    public AjaxResult pageList(@RequestBody OrgEmployeeQuery query)
     {
         try {
             PageInfo<OrgEmployee> pageList = orgEmployeeService.queryPage(query);
@@ -112,7 +112,7 @@ public class OrgEmployeeController {
    */
     @PatchMapping
     @ChangGePermission(name = "员工批量删除")
-    public AjaxResult json(@RequestBody List<Long> ids)
+    public AjaxResult batchDelete(@RequestBody List<Long> ids)
     {
         try {
                 orgEmployeeService.batchDelete(ids);

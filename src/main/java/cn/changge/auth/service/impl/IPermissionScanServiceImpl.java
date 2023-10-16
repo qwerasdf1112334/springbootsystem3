@@ -30,20 +30,21 @@ import java.util.Objects;
 @Service
 @Transactional
 public class IPermissionScanServiceImpl implements IPermissionScanService {
-    @Value("$Changge.Permission.scan-package}")
+    @Value("${Changge.Permission.scan-package}")
     private String url;
     @Autowired
     private IPermissionService permissionService;
 
     @Override
     public void scan() {
-        permissionService.deleteAll();
+
         List<Class> allClassName = ClassUtils.getAllClassName(url);
 
         allClassName.stream().filter(clazz -> clazz.isAnnotationPresent(ChangGePermission.class) && clazz.isAnnotationPresent(RequestMapping.class))
                 .forEach(clazz -> {
                     ChangGePermission changge = (ChangGePermission) clazz.getAnnotation(ChangGePermission.class);
                     RequestMapping request = (RequestMapping) clazz.getAnnotation(RequestMapping.class);
+
                     //父权限
                     Permission parent = new Permission();
                     parent.setDescs(changge.desc());
@@ -51,7 +52,7 @@ public class IPermissionScanServiceImpl implements IPermissionScanService {
                     parent.setSn(clazz.getSimpleName());//返回的是类名
                     String parentUrl = request.value()[0];//返回的是路径上的名字@RequestMapping("/dept"),则返回"/dept"
                     parent.setUrl(parentUrl);
-                    System.out.println("+++++++++++++");
+
                     permissionService.insert(parent);//先insert，才能通过useGeneratedKeys拿到id
                     //  Method[] methods = clazz.getMethods();//这个方法会返回所有的public方法，包括从父类继承而来的和当前类中声明的 public 方法
                     Arrays.stream(clazz.getMethods()).filter(method -> method.isAnnotationPresent(ChangGePermission.class))
@@ -91,7 +92,7 @@ public class IPermissionScanServiceImpl implements IPermissionScanService {
                 Class<? extends Annotation> aClass = annotation.annotationType();
                 Method annotationMethod = aClass.getMethod("value");
                 // 通过invoke调用该对象的value方法,获取结果
-                // 反射执行 方法 方法名.invoke(对象)
+                // 反射执行方法方法名.invoke(对象)
                 String[] value = (String[]) annotationMethod.invoke(annotation);
                 // 如果value不为空且长度大于0,就赋值给methodUrl,并跳出循环
                 if(value != null && value.length > 0){
