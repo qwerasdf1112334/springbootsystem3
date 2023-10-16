@@ -1,5 +1,7 @@
 package cn.changge.auth.domain;
 
+import cn.changge.base.domain.BaseDomain;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -12,7 +14,7 @@ import java.util.Date;
  * @author wangxi
  * @since 2023-10-13
  */
-public class RoleMenu extends BaseDomain{
+public class RoleMenu extends BaseDomain {
 
     private static final long serialVersionUID = 1L;
 

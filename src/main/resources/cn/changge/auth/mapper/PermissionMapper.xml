@@ -14,7 +14,7 @@
                                    #{url},
                                    #{descs},
                                    #{sn},
-                                   #{parent_id}
+                                   #{parent.id}
         )
     </insert>
     <!--删除对象-->
@@ -31,7 +31,7 @@
                             url =#{url},
                             descs =#{descs},
                             sn =#{sn},
-                            parent_id =#{parent_id}
+                            parent_id =#{parent.id}
         where id = #{id}
     </update>
     <!--加载对象-->
@@ -48,8 +48,10 @@
         <include refid="whereSql"/>
     </select>
     <!--//查询当前页数据=参数（查询对象），返回值:List-->
-    <select id="queryPage" parameterType="PermissionQuery" resultType="Permission">
-        select * from t_auth_permission
+    <select id="queryPage" parameterType="PermissionQuery" resultMap="BaseResultMap">
+        select p.*,e.id,e.name from t_auth_permission p
+        left join t_auth_permission e
+        on p.id=e.partent_id
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
@@ -58,7 +60,7 @@
     <sql id="whereSql">
         <where>
             <if test="keyword!=null and keyword!=''">
-                and (name like concat('%',#{keyword},'%'))
+                and (p.name like concat('%',#{keyword},'%'))
             </if>
         </where>
     </sql>
@@ -70,6 +72,9 @@
             #{id}
         </foreach>
     </delete>
+    <delete id="deleteAll">
+        delete from t_auth_permission
+    </delete>
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.changge.auth.domain.Permission">
         <id column="id" property="id" />
@@ -77,7 +82,10 @@
         <result column="url" property="url" />
         <result column="descs" property="descs" />
         <result column="sn" property="sn" />
-        <result column="parent_id" property="parentId" />
+        <association property="parent" javaType="permission">
+            <id column="did" property="id"></id>
+            <result column="pname" property="name"></result>
+        </association>
     </resultMap>
 
     <!-- 通用查询结果列 -->

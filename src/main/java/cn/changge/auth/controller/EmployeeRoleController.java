@@ -3,6 +3,7 @@ package cn.changge.auth.controller;
 import cn.changge.auth.service.IEmployeeRoleService;
 import cn.changge.auth.domain.EmployeeRole;
 import cn.changge.auth.query.EmployeeRoleQuery;
+import cn.changge.base.annotation.ChangGePermission;
 import cn.changge.base.utils.AjaxResult;
 import cn.changge.base.utils.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employeeRole")
+@ChangGePermission(name = "员工和角色关系表")
 public class EmployeeRoleController {
     @Autowired
     public IEmployeeRoleService employeeRoleService;
@@ -23,6 +25,7 @@ public class EmployeeRoleController {
      * @return Ajaxresult转换结果
      */
     @PutMapping
+    @ChangGePermission(name = "员工和角色保存和修改")
     public AjaxResult addOrUpdate(@RequestBody EmployeeRole employeeRole){
         try {
             if( employeeRole.getId()!=null)

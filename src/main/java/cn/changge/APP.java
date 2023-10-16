@@ -3,6 +3,7 @@ package cn.changge;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @BelongsProject: springboot-system
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("cn.changge.*.mapper")
+@ServletComponentScan("cn.changge.base.listener")
 public class APP {
     public static void main(String[] args) {
         SpringApplication.run(APP.class,args);

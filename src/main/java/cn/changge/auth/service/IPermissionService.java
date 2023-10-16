@@ -12,5 +12,5 @@ import cn.changge.base.service.BaseService;
  * @since 2023-10-13
  */
 public interface IPermissionService extends BaseService<Permission> {
-
+    void deleteAll();
 }

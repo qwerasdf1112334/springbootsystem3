@@ -13,4 +13,5 @@ import cn.changge.base.mapper.BaseMapper;
  */
 public interface PermissionMapper extends BaseMapper<Permission> {
 
+    void deleteAll();
 }

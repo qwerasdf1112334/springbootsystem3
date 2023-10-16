@@ -1,5 +1,8 @@
 package cn.changge.auth.domain;
 
+import cn.changge.base.domain.BaseDomain;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -12,7 +15,8 @@ import java.util.Date;
  * @author wangxi
  * @since 2023-10-13
  */
-public class Permission extends BaseDomain{
+@Data
+public class Permission extends BaseDomain {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,56 +28,10 @@ public class Permission extends BaseDomain{
     /**
      * 父级权限的id
      */
-    private Long parentId;
+    private Permission parent;
 
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getDescs() {
-        return descs;
-    }
-
-    public void setDescs(String descs) {
-        this.descs = descs;
-    }
-
-    public String getSn() {
-        return sn;
-    }
-
-    public void setSn(String sn) {
-        this.sn = sn;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
 
     @Override
     public String toString() {
@@ -83,7 +41,7 @@ public class Permission extends BaseDomain{
         ", url=" + url +
         ", descs=" + descs +
         ", sn=" + sn +
-        ", parentId=" + parentId +
+        ", parent=" + parent +
         "}";
     }
 }
