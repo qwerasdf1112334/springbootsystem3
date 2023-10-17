@@ -56,6 +56,9 @@
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
+    <select id="quertByName" resultType="cn.changge.org.domain.OrgEmployee">
+        select * from t_org_employee where username =#{username}
+    </select>
 
 
     <sql id="whereSql">

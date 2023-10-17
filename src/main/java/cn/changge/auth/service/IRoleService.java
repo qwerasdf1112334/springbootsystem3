@@ -1,7 +1,10 @@
 package cn.changge.auth.service;
 
 import cn.changge.auth.domain.Role;
+import cn.changge.auth.dto.RoleDTO;
 import cn.changge.base.service.BaseService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import cn.changge.base.service.BaseService;
  */
 public interface IRoleService extends BaseService<Role> {
 
+    void roleAuth(RoleDTO roleDTO);
+
+    List<Long> queryRolePermissionIds(Long id);
 }

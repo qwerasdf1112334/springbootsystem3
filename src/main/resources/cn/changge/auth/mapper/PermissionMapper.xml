@@ -39,8 +39,19 @@
         select * from t_auth_permission where id = #{id}
     </select>
     <!--加载所有对象-->
-    <select id="queryAll" resultType="Permission">
-        select * from t_auth_permission
+    <select id="queryAll" resultMap="BaseResultMap">
+                SELECT
+                    p.* ,
+                    e.id eid,
+                    e.`name` ename,
+                    e.sn esn
+
+                FROM
+                    t_auth_permission p
+                    LEFT JOIN t_auth_permission e
+                    ON p.id=e.parent_id
+                WHERE
+                    p.parent_id IS NULL
     </select>
     <!--//查询总数=参数（查询对象），返回值：long-->
     <select id="queryTotal" parameterType="PermissionQuery" resultType="long">
@@ -78,7 +89,7 @@
         delete from t_auth_permission
     </delete>
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.changge.auth.domain.Permission">
+    <resultMap id="BaseResultMap" type="Permission">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="url" property="url" />
@@ -88,6 +99,11 @@
             <id column="eid" property="id"></id>
             <result column="ename" property="name"></result>
         </association>
+        <collection property="children" ofType="permission">
+            <id column="eid" property="id"></id>
+            <result column="ename" property="name"></result>
+            <result column="esn" property="sn"></result>
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->

@@ -38,5 +38,23 @@ public class PermissionController {
         }
     }
 
+    /**
+     * 查询权限树
+     *
+
+     */
+    @GetMapping
+    public AjaxResult queryAll()
+    {
+        try {
+            List<Permission> permissions = permissionService.queryAll();
+            return AjaxResult.success(permissions);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.error();
+        }
+    }
+
+
 
 }

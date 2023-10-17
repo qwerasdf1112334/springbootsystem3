@@ -12,5 +12,6 @@ import cn.changge.base.service.BaseService;
  * @since 2023-10-13
  */
 public interface IOrgEmployeeService extends BaseService<OrgEmployee> {
+    OrgEmployee queryByName(String name);
 
 }

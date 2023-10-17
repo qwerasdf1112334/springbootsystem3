@@ -1,5 +1,6 @@
 package cn.changge.auth.controller;
 
+import cn.changge.auth.dto.RoleDTO;
 import cn.changge.auth.service.IRoleService;
 import cn.changge.auth.domain.Role;
 import cn.changge.auth.query.RoleQuery;
@@ -15,6 +16,37 @@ import java.util.List;
 public class RoleController {
     @Autowired
     public IRoleService roleService;
+
+    /**
+     * 授权
+     *
+     */
+    @PutMapping("/permission")
+    public AjaxResult roleAuth(@RequestBody RoleDTO roleDTO)
+    {
+        try {
+           roleService.roleAuth(roleDTO);
+            return AjaxResult.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.error("授权失败"+e.getMessage());
+        }
+    }
+    /**
+     * 授权
+     *
+     */
+    @GetMapping("/permission/{id}")
+    public AjaxResult queryRolePermissionIds(@PathVariable("id") Long id)
+    {
+        try {
+         List<Long> ids=  roleService.queryRolePermissionIds(id);
+            return AjaxResult.success(ids);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.error("授权失败"+e.getMessage());
+        }
+    }
 
 
     /**

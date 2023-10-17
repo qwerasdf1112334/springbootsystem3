@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -29,6 +30,7 @@ public class Permission extends BaseDomain {
      * 父级权限的id
      */
     private Permission parent;
+    private List<Permission> children;
 
 
 

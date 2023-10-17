@@ -7,6 +7,8 @@ import cn.changge.base.service.impl.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -24,5 +26,10 @@ public  class PermissionServiceImpl extends BaseServiceImpl<Permission> implemen
     public void deleteAll() {
         permissionMapper.deleteAll();
 
+    }
+
+    @Override
+    public List<Permission> queryAll() {
+        return permissionMapper.queryAll();
     }
 }

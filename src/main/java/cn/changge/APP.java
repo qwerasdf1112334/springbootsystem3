@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 @MapperScan("cn.changge.*.mapper")
 @ServletComponentScan("cn.changge.base.listener")
-public class APP implements WebMvcConfigurer {
+public class APP  {
     public static void main(String[] args) {
         SpringApplication.run(APP.class,args);
     }

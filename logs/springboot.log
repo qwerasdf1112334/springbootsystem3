@@ -1,9 +1,6 @@
-2023-10-16 22:31:58.501 ----> [http-nio-8080-exec-1] ---> INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-16 22:31:58.503 ----> [http-nio-8080-exec-1] ---> INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2023-10-16 22:31:58.520 ----> [http-nio-8080-exec-1] ---> INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
-2023-10-16 22:31:58.726 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryTotal - ==>  Preparing: select count(*) from t_auth_permission p left JOIN t_auth_permission e on p.parent_id = e.id 
-2023-10-16 22:31:58.726 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryTotal - ==> Parameters: 
-2023-10-16 22:31:58.738 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryTotal - <==      Total: 1
-2023-10-16 22:31:58.743 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryPage - ==>  Preparing: select p.*,e.id eid,e.name ename from t_auth_permission p left join t_auth_permission e on p.parent_id=e.id limit ?,? 
-2023-10-16 22:31:58.744 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryPage - ==> Parameters: 0(Integer), 10(Integer)
-2023-10-16 22:31:58.749 ----> [http-nio-8080-exec-1] ---> DEBUG cn.changge.auth.mapper.PermissionMapper.queryPage - <==      Total: 10
+2023-10-17 22:57:08.111 ----> [http-nio-8080-exec-6] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - ==>  Preparing: select * from t_org_employee where username =? 
+2023-10-17 22:57:08.113 ----> [http-nio-8080-exec-6] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - ==> Parameters: admin(String)
+2023-10-17 22:57:08.115 ----> [http-nio-8080-exec-6] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - <==      Total: 1
+2023-10-17 22:59:34.290 ----> [http-nio-8080-exec-7] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - ==>  Preparing: select * from t_org_employee where username =? 
+2023-10-17 22:59:34.290 ----> [http-nio-8080-exec-7] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - ==> Parameters: admin(String)
+2023-10-17 22:59:34.294 ----> [http-nio-8080-exec-7] ---> DEBUG c.changge.org.mapper.OrgEmployeeMapper.quertByName - <==      Total: 1

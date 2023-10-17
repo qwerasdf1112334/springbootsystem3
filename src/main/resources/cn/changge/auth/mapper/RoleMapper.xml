@@ -11,6 +11,13 @@
                                    #{sn}
         )
     </insert>
+    <insert id="roleAuth">
+        insert into  t_auth_role_permission(role_id,permission_sn)
+        values
+        <foreach collection="PermissionList" separator="," item="p">
+            ( #{roleId},#{p.sn})
+        </foreach>
+    </insert>
     <!--删除对象-->
     <delete id="delete" parameterType="long">
         delete from t_auth_role where id = #{id}
@@ -44,6 +51,13 @@
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
+    <select id="queryRolePermissionIds" resultType="java.lang.Long">
+        select p.id
+        from t_auth_role_permission rp
+        left join t_auth_permission p
+        on rp.permission_sn=p.sn
+        where rp.role_id=#{id}
+    </select>
 
 
     <sql id="whereSql">
@@ -60,6 +74,9 @@
         <foreach collection="list" item="id" open="(" close=")" separator=",">
             #{id}
         </foreach>
+    </delete>
+    <delete id="deleteAll">
+        delete from t_auth_role_permission where role_id = #{roleId}
     </delete>
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.changge.auth.domain.Role">

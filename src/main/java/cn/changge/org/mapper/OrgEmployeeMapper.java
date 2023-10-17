@@ -12,5 +12,6 @@ import cn.changge.base.mapper.BaseMapper;
  * @since 2023-10-13
  */
 public interface OrgEmployeeMapper extends BaseMapper<OrgEmployee> {
+    OrgEmployee quertByName(String name);
 
 }
