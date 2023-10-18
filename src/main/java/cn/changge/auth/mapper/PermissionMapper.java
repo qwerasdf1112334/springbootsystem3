@@ -2,6 +2,9 @@ package cn.changge.auth.mapper;
 
 import cn.changge.auth.domain.Permission;
 import cn.changge.base.mapper.BaseMapper;
+import cn.changge.org.domain.OrgEmployee;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +17,6 @@ import cn.changge.base.mapper.BaseMapper;
 public interface PermissionMapper extends BaseMapper<Permission> {
 
     void deleteAll();
+
+    List<String> queryPermByuserId(Long id);
 }

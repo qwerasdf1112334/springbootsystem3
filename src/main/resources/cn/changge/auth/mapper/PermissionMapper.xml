@@ -68,6 +68,16 @@
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
+    <select id="queryPermByuserId" resultType="String">
+                SELECT
+                    rp.permission_sn
+                FROM
+                    t_auth_role_permission rp
+                LEFT JOIN t_auth_employee_role er
+                    ON er.role_id=rp.role_id
+                WHERE
+                    er.employee_id=#{id}
+    </select>
 
 
     <sql id="whereSql">

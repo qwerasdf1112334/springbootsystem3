@@ -4,6 +4,7 @@ import cn.changge.auth.domain.Permission;
 import cn.changge.auth.mapper.PermissionMapper;
 import cn.changge.auth.service.IPermissionService;
 import cn.changge.base.service.impl.BaseServiceImpl;
+import cn.changge.org.domain.OrgEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,11 @@ public  class PermissionServiceImpl extends BaseServiceImpl<Permission> implemen
     public void deleteAll() {
         permissionMapper.deleteAll();
 
+    }
+
+    @Override
+    public List<String> queryPermByuserId(Long id) {
+        return permissionMapper.queryPermByuserId(id);
     }
 
     @Override

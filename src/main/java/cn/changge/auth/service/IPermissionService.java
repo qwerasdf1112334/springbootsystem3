@@ -2,6 +2,9 @@ package cn.changge.auth.service;
 
 import cn.changge.auth.domain.Permission;
 import cn.changge.base.service.BaseService;
+import cn.changge.org.domain.OrgEmployee;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import cn.changge.base.service.BaseService;
  */
 public interface IPermissionService extends BaseService<Permission> {
     void deleteAll();
+
+    List<String> queryPermByuserId(Long id);
 }
