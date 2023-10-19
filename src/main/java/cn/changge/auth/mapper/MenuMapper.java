@@ -3,6 +3,8 @@ package cn.changge.auth.mapper;
 import cn.changge.auth.domain.Menu;
 import cn.changge.base.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,5 @@ import cn.changge.base.mapper.BaseMapper;
  */
 public interface MenuMapper extends BaseMapper<Menu> {
 
+    List<Menu> menuTree(Long id);
 }

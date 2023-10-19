@@ -1,3 +1,5 @@
-2023-10-18 19:58:34.281 ----> [http-nio-8080-exec-4] ---> DEBUG c.c.auth.mapper.PermissionMapper.queryPermByuserId - ==>  Preparing: SELECT rp.permission_sn FROM t_auth_role_permission rp LEFT JOIN t_auth_employee_role er ON er.role_id=rp.role_id WHERE er.employee_id=? 
-2023-10-18 19:58:34.283 ----> [http-nio-8080-exec-4] ---> DEBUG c.c.auth.mapper.PermissionMapper.queryPermByuserId - ==> Parameters: 2(Long)
-2023-10-18 19:58:34.285 ----> [http-nio-8080-exec-4] ---> DEBUG c.c.auth.mapper.PermissionMapper.queryPermByuserId - <==      Total: 7
+2023-10-19 21:58:10.424 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryTotal - ==> Parameters: 
+2023-10-19 21:58:10.428 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryTotal - <==      Total: 1
+2023-10-19 21:58:10.428 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - ==>  Preparing: select * from t_org_employee limit ?,? 
+2023-10-19 21:58:10.429 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - ==> Parameters: 0(Integer), 10(Integer)
+2023-10-19 21:58:10.431 ----> [http-nio-8080-exec-2] ---> DEBUG cn.changge.org.mapper.OrgEmployeeMapper.queryPage - <==      Total: 10

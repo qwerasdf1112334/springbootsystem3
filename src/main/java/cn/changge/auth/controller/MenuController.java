@@ -50,6 +50,18 @@ public class MenuController {
             return AjaxResult.error();
         }
     }
+    //获取用户
+    @GetMapping("/menuTree/{id}")
+    public AjaxResult menuTree(@PathVariable("id")Long id)
+    {
+        try {
+           List<Menu> menuList = menuService.menuTree(id);
+            return AjaxResult.success(menuList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.error();
+        }
+    }
 	
     //获取用户
     @GetMapping("/{id}")

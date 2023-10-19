@@ -1,9 +1,13 @@
 package cn.changge.auth.domain;
 
 import cn.changge.base.domain.BaseDomain;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -14,6 +18,9 @@ import java.util.Date;
  * @author wangxi
  * @since 2023-10-13
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Menu extends BaseDomain {
 
     private static final long serialVersionUID = 1L;
@@ -24,55 +31,5 @@ public class Menu extends BaseDomain {
     private String icon;
     private Long parentId;
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
-
-    @Override
-    public String toString() {
-        return "Menu{" +
-        ", id=" + id +
-        ", name=" + name +
-        ", url=" + url +
-        ", icon=" + icon +
-        ", parentId=" + parentId +
-        "}";
-    }
+    private List<Menu> children;
 }

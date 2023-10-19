@@ -3,6 +3,8 @@ package cn.changge.auth.service;
 import cn.changge.auth.domain.Menu;
 import cn.changge.base.service.BaseService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import cn.changge.base.service.BaseService;
  */
 public interface IMenuService extends BaseService<Menu> {
 
+    List<Menu> menuTree(Long id);
 }

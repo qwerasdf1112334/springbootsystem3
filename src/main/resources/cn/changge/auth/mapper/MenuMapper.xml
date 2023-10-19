@@ -50,6 +50,22 @@
         <include refid="whereSql"/>
         limit #{start},#{pageSize}
     </select>
+    <select id="menuTree" resultMap="BaseResultMap">
+                SELECT
+                    m.* ,
+                    am.id amid,
+                    am.`name` amname,
+                    am.url amurl
+                FROM
+                    t_auth_menu m
+                    LEFT JOIN t_auth_menu am ON m.id = am.parent_id
+                    LEFT JOIN t_auth_role_menu  b ON b.menu_id=m.id
+                    LEFT JOIN t_auth_employee_role c on	c.role_id = b.role_id
+
+                WHERE
+                    m.parent_id =0
+
+    </select>
 
 
     <sql id="whereSql">
@@ -74,6 +90,11 @@
         <result column="url" property="url" />
         <result column="icon" property="icon" />
         <result column="parent_id" property="parentId" />
+        <collection property="children" ofType="Menu">
+            <id column="amid" property="id" />
+            <result column="amname" property="name" />
+            <result column="amurl" property="url" />
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->
