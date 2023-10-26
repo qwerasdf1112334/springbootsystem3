@@ -1,5 +1,6 @@
 package cn.changge.org.domain;
 
+import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.changge.base.domain.BaseDomain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ import java.util.List;
 @Data
 public class Department extends BaseDomain {
     private Long id;
+    @Excel(name = "部门", width = 10)
     private String name;
     private String intro;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = ("GMT+8"))

@@ -29,6 +29,19 @@ public class AjaxResult {
         ajaxResult.msg="操作成功";
         return ajaxResult;
     }
+    public static AjaxResult success(String msg){
+        AjaxResult ajaxResult = new AjaxResult();
+        ajaxResult.success=true;
+        ajaxResult.msg=msg;
+        return ajaxResult;
+    }
+    public static AjaxResult success(String msg,Object data){
+        AjaxResult ajaxResult = new AjaxResult();
+        ajaxResult.success=true;
+        ajaxResult.msg=msg;
+        ajaxResult.data=data;
+        return ajaxResult;
+    }
     public static AjaxResult success(Object data){
         AjaxResult ajaxResult = new AjaxResult();
         ajaxResult.data=data;
@@ -47,7 +60,6 @@ public class AjaxResult {
         AjaxResult ajaxResult = new AjaxResult();
         ajaxResult.success=false;
         ajaxResult.msg=msg;
-        ajaxResult.msg="操作失败";
         return ajaxResult;
     }
 
